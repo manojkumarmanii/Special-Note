@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neumorphic Post Card</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #e0e5ec;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 320px;
+      height: 200px;
+      background: #e0e5ec;
+      border-radius: 20px;
+      box-shadow: 8px 8px 16px #b8bec6, -8px -8px 16px #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .container:active {
+      box-shadow: inset 8px 8px 16px #b8bec6, inset -8px -8px 16px #ffffff;
+    }
+
+    /* Cover Styles */
+    .cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #e0e5ec;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #6c757d;
+      transition: transform 0.5s ease;
+    }
+
+    .open .cover {
+      transform: translateY(-200%);
+    }
+
+    /* Letter Styles */
+    .letter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 290px;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: inset 4px 4px 8px #b8bec6, inset -4px -4px 8px #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
+    }
+
+    .open .letter {
+      transform: translateY(0);
+    }
+
+    .letter h3 {
+      font-size: 1.5rem;
+      color: #e74c3c;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .letter p {
+      font-size: 1rem;
+      color: #34495e;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+        height: 250px;
+      }
+
+      .cover {
+        font-size: 1rem;
+      }
+
+      .letter h3 {
+        font-size: 1.2rem;
+        position: absolute;
+        top: 0px;
+      }
+
+      .letter p {
+        font-size: 15px;
+        position: absolute;
+        top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="postCard">
+    <!-- Cover -->
+    <div class="cover">Tap to Open</div>
+
+    <!-- Letter -->
+    <div class="letter">
+      <h3>💌 A Special Note</h3>
+      <p>
+        Hi dii pondati! ❤️<br>
+        inaki enna theriyuma nambaloda 1 yr 2 months luv aniversary .and luv panni ithoda 10,272 hrs 616,320 mins 36,892,800 sec's aaguthu❤️ <br> ❤️ happy luv aniversary dii chello❤️
+      </p>
+      
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle the "click-to-open" functionality
+    document.getElementById("postCard").addEventListener("click", function() {
+      this.classList.toggle("open");
+    });
+  </script>
+</body>
+</html>
